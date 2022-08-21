@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>动态简历</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 5px;
+        font-size: large;
+        background-color: lightcoral;
+        color: white;
+        border: none;
+        transition: 0.15s ease-in-out;
+        
+    }
+    button:hover{
+        background-color: rgb(236, 76, 76);
+    }
+    @media screen and (min-width: 769px){
+        .frame {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .code{
+            width: 50vw;
+            word-wrap: break-word;
+        }
+        .effect {
+            width: 50vw;
+            height: 100vh;
+        }   
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .code{
+            height: 50vh;
+            width: 100vw;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+        .effect {
+            width: 100vw;
+            height: 50vh;
+        }   
+    }
+</style>
+<body>
+    <div class="frame">
+        <style class="style"></style>
+        <div class="code"></div>
+        <div class="effect">
+            <button onclick="changeSpeed()">点我变速</button>
+            <div class="circle">
+                <div class="blackCircle">
+                    <div class="whiteBall"></div>
+                </div>
+                <div class="whiteCircle">
+                    <div class="blackBall"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .test {
+    }
+</style>
+<script src="/index.js"></script>
+</html>
