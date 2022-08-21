@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>动态简历</title>
+</head>
+<style>* {
+        margin: 0;
+        padding: 0;
+    }
+    .button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 5px;
+        font-size: large;
+        background-color: lightcoral;
+        color: white;
+        border: none;
+        transition: 0.15s ease-in-out;
+        
+    }
+    .button:hover{
+        background-color: rgb(236, 76, 76);
+    }
+    @media screen and (min-width: 769px){
+        .frame {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .code{
+            width: 50vw;
+            word-wrap: break-word;
+        }
+        .effect {
+            width: 50vw;
+            height: 100vh;
+        }   
+    }
+    @media only screen and (max-width: 768px) {
+        .frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .code{
+            height: 50vh;
+            width: 100vw;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+        .effect {
+            width: 100vw;
+            height: 50vh;
+        }   
+    }</style>
+<body>
+    <div class="frame">
+        <style class="style"></style>
+        <div class="code"></div>
+        <div class="effect">
+            <input type="button" class="button" value="点我变速" onclick="changeSpeed()">
+            <div class="circle">
+                <div class="blackCircle">
+                    <div class="whiteBall"></div>
+                </div>
+                <div class="whiteCircle">
+                    <div class="blackBall"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script language="JavaScript">var code = document.querySelector(".code");
+var style = document.querySelector(".style");
+var str = "\n/* \u60A8\u597D\uFF0C\u6211\u51C6\u5907 show \u4E00\u4E0B\u6211\u7684\u524D\u7AEF\u529F\u5E95\n\u5148\u641E\u4E2A div \u6846\u6846\u51FA\u6765*/\n.effect {\n    display: flex;\n    border: 1px black solid;\n    justify-content: center;\n    align-items: center;\n    position: sticky;\n    top: 0;\n    box-sizing: border-box;\n}\n/* \u63A5\u4E0B\u6765\u8981\u5728\u6846\u6846\u91CC\u753B\u4E00\u4E2A\u5706\uFF0C\u5E76\u586B\u5145\u4E00\u4E2A\u6E10\u53D8\u8272 */\n.circle{\n    border: 1px black solid;\n    width: 30vw;\n    height: 30vw;\n    border-radius: 50%;\n    background: linear-gradient(90deg, #FFFFFF 0%,#FFFFFF 50%,#000000 50%,#000000 100%);\n}\n/* \u73B0\u5728\u51C6\u5907\u753B\u51FA\u592A\u6781\u7684\u8F6E\u5ED3 */\n.blackCircle {\n    position: relative;\n    width: 15vw;\n    height: 15vw;\n    border-radius: 50%;\n    background: black;\n    transform: translate(50%);\n}\n.whiteCircle {\n    position: relative;\n    width: 15vw;\n    height: 15vw;\n    border-radius: 50%;\n    background: white;\n    transform: translate(50%);\n}\n/* \u518D\u641E\u4E24\u4E2A\u5C0F\u7403\u4E0A\u53BB */\n.whiteBall {\n    position: relative;\n    width: 5vw;\n    height: 5vw;\n    border-radius: 50%;\n    background: white;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n}\n.blackBall {\n    position: relative;\n    width: 5vw;\n    height: 5vw;\n    border-radius: 50%;\n    background: black;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n}\n";
+var content = "";
+var i = 1;
+var speed = 50;
+
+var step = function step() {
+  if (str[i] === "\n") {
+    content += "<br>";
+  } else {
+    content += str[i];
+  }
+
+  if (i < str.length) {
+    setTimeout(function () {
+      code.innerHTML = content;
+      style.innerHTML = str.substring(0, i);
+      i++;
+      code.scroll(0, 9999);
+      window.scroll(0, 9999);
+      step();
+    }, speed);
+  } else {
+    return 0;
+  }
+};
+
+step();
+
+function changeSpeed() {
+  speed = speed === 0 ? 50 : 0;
+}</script>
+</html>

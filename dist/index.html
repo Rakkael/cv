@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
     }
-    button {
+    .button {
         position: absolute;
         top: 15px;
         right: 15px;
@@ -22,7 +22,7 @@
         transition: 0.15s ease-in-out;
         
     }
-    button:hover{
+    .button:hover{
         background-color: rgb(236, 76, 76);
     }
     @media screen and (min-width: 769px){
@@ -41,8 +41,6 @@
             height: 100vh;
         }   
     }
-
-
     @media only screen and (max-width: 768px) {
         .frame {
             display: flex;
@@ -66,7 +64,8 @@
         <style class="style"></style>
         <div class="code"></div>
         <div class="effect">
-            <button onclick="changeSpeed()">点我变速</button>
+            <!-- 无法绑定引用进来的 js 文件里的方法，但把 js 写在 html 里就正常 -->
+            <input type="button" class="button" value="点我变速" onclick="changeSpeed()">
             <div class="circle">
                 <div class="blackCircle">
                     <div class="whiteBall"></div>
@@ -78,7 +77,5 @@
         </div>
     </div>
 </body>
-<style>.test {
-    }</style>
-<script src="src.ed7166f8.js"></script>
+<script language="JavaScript" src="/src.e31bb0bc.js"></script>
 </html>

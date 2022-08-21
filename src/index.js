@@ -64,7 +64,6 @@ let content = ""
 let i = 1;
 let speed = 50;
 let step = () => {
-    console.log("执行一次");
     if (str[i] === "\n") {
         content += "<br>";
     } else {
