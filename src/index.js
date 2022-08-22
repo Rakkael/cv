@@ -88,3 +88,5 @@ step();
 function changeSpeed(){
     speed = speed === 0 ? 50 : 0;
 }
+let button = document.querySelector(".button")
+button.addEventListener("click",changeSpeed)

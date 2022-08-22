@@ -151,6 +151,9 @@ step();
 function changeSpeed() {
   speed = speed === 0 ? 50 : 0;
 }
+
+var button = document.querySelector(".button");
+button.addEventListener("click", changeSpeed);
 },{}],"C:/Users/Rakkael/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -179,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4773" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2800" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
