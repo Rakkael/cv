@@ -85,6 +85,7 @@ let step = () => {
 
 step();
 
+// addEventListener 实现监听变速
 function changeSpeed(){
     speed = speed === 0 ? 50 : 0;
 }
